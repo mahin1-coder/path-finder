@@ -31,14 +31,24 @@ Output figures are saved to the `results/` folder.
 
 ## Results
 
+> Click any image to open the full-size view, or use the direct links below.
+
+**[🔗 View All Results on GitHub](https://github.com/mahin1-coder/path-finder/tree/main/results)**
+
+| Map | Direct Link |
+|---|---|
+| Map 1 — Open Field | [View](https://github.com/mahin1-coder/path-finder/blob/main/results/Map_1_-_Open_Field.png) |
+| Map 2 — Narrow Corridor | [View](https://github.com/mahin1-coder/path-finder/blob/main/results/Map_2_-_Narrow_Corridor.png) |
+| Map 3 — Dense Clutter | [View](https://github.com/mahin1-coder/path-finder/blob/main/results/Map_3_-_Dense_Clutter.png) |
+
 ### Map 1 — Open Field (20×20)
-![Map 1](results/Map_1_-_Open_Field.png)
+[![Map 1](results/Map_1_-_Open_Field.png)](https://github.com/mahin1-coder/path-finder/blob/main/results/Map_1_-_Open_Field.png)
 
 ### Map 2 — Narrow Corridor (20×20)
-![Map 2](results/Map_2_-_Narrow_Corridor.png)
+[![Map 2](results/Map_2_-_Narrow_Corridor.png)](https://github.com/mahin1-coder/path-finder/blob/main/results/Map_2_-_Narrow_Corridor.png)
 
 ### Map 3 — Dense Clutter (25×25)
-![Map 3](results/Map_3_-_Dense_Clutter.png)
+[![Map 3](results/Map_3_-_Dense_Clutter.png)](https://github.com/mahin1-coder/path-finder/blob/main/results/Map_3_-_Dense_Clutter.png)
 
 ---
 
