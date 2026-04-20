@@ -1,4 +1,3 @@
 __pycache__/
 *.pyc
-results/*.png
 .DS_Store
