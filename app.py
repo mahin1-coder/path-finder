@@ -94,10 +94,8 @@ col_info2.metric("Start", str(start))
 col_info3.metric("Goal",  str(goal))
 
 if not run:
-    # just show the empty grid as a preview
     fig_prev, ax_prev = plt.subplots(figsize=(5, 5))
     prev_img = build_image(grid, set(), None)
-    # mark start/goal even before running
     prev_img[start] = [0.18, 0.80, 0.44]
     prev_img[goal]  = [0.90, 0.25, 0.25]
     ax_prev.imshow(prev_img, origin="upper", interpolation="nearest")
@@ -121,32 +119,25 @@ if run:
         )
         len_e = path_length(path_e) if path_e else 0
 
-    # --- metrics row ---
     st.subheader("📊 Results Comparison")
     c1, c2, c3 = st.columns(3)
-    c1.metric("Path Length",      f"{len_s:.2f}",        delta=f"{len_e-len_s:+.2f} (Enhanced)")
-    c2.metric("Nodes Expanded",   f"{nodes_s}",          delta=f"{nodes_e-nodes_s:+d} (Enhanced)")
+    c1.metric("Path Length",      f"{len_s:.2f}",         delta=f"{len_e-len_s:+.2f} (Enhanced)")
+    c2.metric("Nodes Expanded",   f"{nodes_s}",           delta=f"{nodes_e-nodes_s:+d} (Enhanced)")
     c3.metric("Compute Time",     f"{time_s*1000:.2f}ms", delta=f"{(time_e-time_s)*1000:+.2f}ms (Enhanced)")
-
     st.caption("Delta values show how Enhanced A* compares to Standard A*. Positive = Enhanced used more.")
-
     st.divider()
 
-    # --- side-by-side visualisation ---
     st.subheader("🖼️ Visual Comparison")
     fig, axes = plt.subplots(1, 2, figsize=(14, 7), facecolor="#f5f5f5")
     fig.suptitle(f"Shortest Path Finder  —  {name}", fontsize=13, fontweight="bold")
-
     draw_panel(axes[0], grid, exp_s, path_s,
                f"Standard A*\nLength: {len_s:.2f}  |  Nodes: {nodes_s}  |  Time: {time_s*1000:.2f}ms")
     draw_panel(axes[1], grid, exp_e, path_e,
                f"Enhanced A*  (α={alpha}, β={beta}, r={radius})\nLength: {len_e:.2f}  |  Nodes: {nodes_e}  |  Time: {time_e*1000:.2f}ms")
-
     plt.tight_layout()
     st.pyplot(fig, use_container_width=True)
     plt.close(fig)
 
-    # --- explanation ---
     with st.expander("💡 What do these results mean?"):
         st.markdown(f"""
 - **Standard A\*** finds the shortest raw path using only movement cost + heuristic.
