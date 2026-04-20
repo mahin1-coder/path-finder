@@ -5,6 +5,15 @@ Course project for **Intro to Algorithms** — compares two versions of the A\* 
 
 ---
 
+## 🚀 Live Demo
+
+**[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/mahin1-coder/path-finder/main/app.py)**
+
+> No installation needed — runs entirely in the browser.
+> Select a map, adjust penalty settings, and click **Run** to compare both algorithms live.
+
+---
+
 ## What it does
 
 - Implements **Standard A\*** using octile distance heuristic
@@ -20,12 +29,19 @@ Course project for **Intro to Algorithms** — compares two versions of the A\* 
 
 ## How to run
 
+**Option 1 — Live in browser (no install):**
+Visit the live demo link at the top ☝️
+
+**Option 2 — Run locally:**
 ```bash
-pip install numpy matplotlib
-python3 main.py
+pip install numpy matplotlib streamlit
+streamlit run app.py
 ```
 
-Output figures are saved to the `results/` folder.
+Output figures are also saved to the `results/` folder when running `main.py` directly:
+```bash
+python3 main.py
+```
 
 ---
 
@@ -74,7 +90,8 @@ Output figures are saved to the `results/` folder.
 
 | File | Description |
 |---|---|
-| `main.py` | Runs all experiments and prints results |
+| `app.py` | **Streamlit web app** (live interactive demo) |
+| `main.py` | Runs all experiments locally and prints results |
 | `astar.py` | Standard A* implementation |
 | `enhanced_astar.py` | Enhanced A* with turn + proximity penalties |
 | `utils.py` | Grid helpers, Node class, test maps |
